@@ -404,6 +404,8 @@
   </build>
   <modules>
     <module>web</module>
+	<module>migration2.0</module>
+	<module>migration2.0-import</module>
     <module>eXoApplication</module>
     <module>extension</module>
     <module>demo</module>
