@@ -25,7 +25,7 @@
   </issueManagement>
   <ciManagement>
     <system>hudson</system>
-    <url>http://builder.exoplatform.org/hudson/job/cs-trunk-ci/</url>
+    <url>http://builder.exoplatform.org/hudson/job/cs-2.0.x-ci/</url>
   </ciManagement>
   <properties>
     <org.exoplatform.kernel.version>2.2.0-GA</org.exoplatform.kernel.version>
