@@ -107,6 +107,30 @@
        <artifactId>exo.tool.framework.junit</artifactId>
        <scope>test</scope>
     </dependency>
-
+	<dependency>
+       <groupId>org.jvnet.mock-javamail</groupId>
+       <artifactId>mock-javamail</artifactId>
+       <version>${org.jvnet.mock-javamail.version}</version>
+       <scope>test</scope>
+    </dependency>
   </dependencies>
+  
+  <build>
+   <testResources>
+     <testResource>
+        <directory>src/test/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+          <include>**/*.conf</include>
+        </includes>
+      </testResource>
+     <testResource>
+        <directory>src/test/resources</directory>
+        <includes>
+        <include>**/*.providers</include>
+        </includes>
+     </testResource>
+    </testResources>
+  </build>
 </project>
