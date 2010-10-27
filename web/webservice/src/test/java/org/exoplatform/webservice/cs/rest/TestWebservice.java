@@ -81,7 +81,7 @@ public class TestWebservice extends AbstractResourceTest {
     calCategory.setName("categoryName") ;
     calCategory.setDescription("Description") ;
     //assertNotNull(calendarService);
-    //calendarService.saveCalendarCategory("root", calCategory, true) ;
+    calendarService.saveCalendarCategory(username, calCategory, true) ;
 
     //create/get calendar in private folder
     Calendar cal = new Calendar() ;
@@ -90,10 +90,9 @@ public class TestWebservice extends AbstractResourceTest {
     cal.setCategoryId(calCategory.getId()) ;
     cal.setPublic(true) ;
     
-    String extURI = "/cs/calendar/rss/" + username + "/" + cal.getId() + "/0";
+    String extURI = "/cs/calendar/subscribe/" + username + "/" + cal.getId() + "/0";
     
     cal.setPublicUrl(extURI);
-    System.out.println("\n\n extURI " + extURI);
     calendarService.saveUserCalendar(username, cal, true);
     
     CalendarEvent event = new CalendarEvent();
