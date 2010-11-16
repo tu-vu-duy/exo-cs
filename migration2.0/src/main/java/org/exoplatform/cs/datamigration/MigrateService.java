@@ -200,13 +200,23 @@ public class MigrateService implements Startable{
   }
 
   private String getFilenameByUser(String file, String username) {
-    String fileName = username + UNDERSCORE + file.substring(file.lastIndexOf("\\") + 1);
-    return (file.substring(0, file.lastIndexOf("\\") + 1) + fileName) ;
+    if (file.indexOf("\\") > 0) {
+      String fileName = username + UNDERSCORE + file.substring(file.lastIndexOf("\\") + 1);
+      return (file.substring(0, file.lastIndexOf("\\") + 1) + fileName) ;      
+    } else {
+      String fileName = username + UNDERSCORE + file.substring(file.lastIndexOf("/") + 1);
+      return (file.substring(0, file.lastIndexOf("/") + 1) + fileName) ;
+    }
   }
   
   private String getPublicCalendarFilename(String file) {
-    String fileName = PUBLIC + UNDERSCORE + file.substring(file.lastIndexOf("\\") + 1);
-    return (file.substring(0, file.lastIndexOf("\\") + 1) + fileName) ;
+    if (file.indexOf("\\") > 0) {
+      String fileName = PUBLIC + UNDERSCORE + file.substring(file.lastIndexOf("\\") + 1);
+      return (file.substring(0, file.lastIndexOf("\\") + 1) + fileName) ;      
+    } else {
+      String fileName = PUBLIC + UNDERSCORE + file.substring(file.lastIndexOf("/") + 1);
+      return (file.substring(0, file.lastIndexOf("/") + 1) + fileName) ;
+    }    
   }
   
   private void calendarMigration() {
